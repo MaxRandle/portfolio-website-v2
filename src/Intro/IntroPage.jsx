@@ -1,5 +1,16 @@
 import React from "react";
-import { Box, Container, Divider, Typography } from "@material-ui/core";
+import {
+  Box,
+  Container,
+  Divider,
+  Fab,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import maxPortrate from "../media/max-portrate.jpg";
@@ -9,6 +20,8 @@ import nodeLogo from "../media/logos/node-logo.svg";
 import pythonLogo from "../media/logos/python-logo.svg";
 import uipathLogo from "../media/logos/uipath-logo.svg";
 import SkillItem from "./SkillItem";
+import { GitHub, LinkedIn, NavigateNext } from "@material-ui/icons";
+import SectionHeader from "./SectionHeader";
 
 const useStyles = makeStyles((theme) => ({
   flexColContainer: {
@@ -25,6 +38,20 @@ const useStyles = makeStyles((theme) => ({
   },
   center: {
     textAlign: "center",
+  },
+  sectionHeader: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  sectionHeaderDivider: {
+    flexGrow: "1",
+  },
+  sectionHeaderText: {
+    padding: theme.spacing(0, 2, 0, 2),
+  },
+  extendedFab: {
+    marginLeft: theme.spacing(1),
   },
 }));
 
@@ -46,11 +73,7 @@ const IntroPage = () => {
         <img className={clsx(classes.portrate)} src={maxPortrate} alt="max portrate" />
       </Box>
 
-      <Divider className={clsx(classes.flexColItem)} />
-
-      <Typography className={clsx(classes.flexColItem, classes.center)} color="inherit" variant="h3">
-        Skills
-      </Typography>
+      <SectionHeader className={clsx(classes.flexColItem)}>Skills</SectionHeader>
 
       <SkillItem className={clsx(classes.flexColItem)} logo={javascriptLogo} alt={"JavaScript logo"}>
         I have used JavaScript for front-end, back-end, automation, AI, and as a glorified calculator. The languages has
@@ -79,9 +102,41 @@ const IntroPage = () => {
       <SkillItem className={clsx(classes.flexColItem)} logo={pythonLogo} alt={"Python logo"}>
         Python was taught primarily as the language of choice for the majority of my papers while studying computer
         science. Most assignments and projects were set in Python because it's a well rounded language which can be used
-        for O.O. or functional programming. Now days I have found success using python for data science and machine
-        learning as a hobbyist.
+        for Object-Oriented or functional programming. Now days I have found success using python for data science and
+        machine learning as a hobbyist.
       </SkillItem>
+
+      <SectionHeader className={clsx(classes.flexColItem)}>Resume</SectionHeader>
+
+      <Box className={clsx(classes.flexColItem, classes.center)}>
+        <Fab
+          variant="extended"
+          color="primary"
+          onClick={() => window.open("http://max-randle-resume.s3-website-ap-southeast-2.amazonaws.com/")}
+        >
+          <Typography className={classes.extendedFab}>preview</Typography>
+          <NavigateNext />
+        </Fab>
+      </Box>
+
+      <SectionHeader className={clsx(classes.flexColItem)}>External</SectionHeader>
+
+      <Container className={clsx(classes.flexColItem)}>
+        <List>
+          <ListItem button onClick={() => window.open("https://github.com/MaxRandle")}>
+            <ListItemIcon>
+              <GitHub />
+            </ListItemIcon>
+            <ListItemText>Github</ListItemText>
+          </ListItem>
+          <ListItem button onClick={() => window.open("https://www.linkedin.com/in/max-randle-a79760160/")}>
+            <ListItemIcon>
+              <LinkedIn />
+            </ListItemIcon>
+            <ListItemText>Linkedin</ListItemText>
+          </ListItem>
+        </List>
+      </Container>
     </Container>
   );
 };
