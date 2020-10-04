@@ -7,6 +7,7 @@ import {
   Link,
   List,
   ListItem,
+  ListItemAvatar,
   ListItemIcon,
   ListItemText,
   Typography,
@@ -20,7 +21,7 @@ import nodeLogo from "../media/logos/node-logo.svg";
 import pythonLogo from "../media/logos/python-logo.svg";
 import uipathLogo from "../media/logos/uipath-logo.svg";
 import SkillItem from "./SkillItem";
-import { GitHub, LinkedIn, NavigateNext } from "@material-ui/icons";
+import { Description, GitHub, LinkedIn, NavigateNext } from "@material-ui/icons";
 import SectionHeader from "./SectionHeader";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
   },
   flexColItem: {
     margin: theme.spacing(0, 0, 3, 0),
+  },
+  flexColItemSmallMargin: {
+    margin: theme.spacing(0, 0, 1, 0),
   },
   portrate: {
     borderRadius: "50%",
@@ -73,12 +77,42 @@ const IntroPage = () => {
         <img className={clsx(classes.portrate)} src={maxPortrate} alt="max portrate" />
       </Box>
 
+      <SectionHeader className={clsx(classes.flexColItemSmallMargin)}>External</SectionHeader>
+
+      <Container className={clsx(classes.flexColItemSmallMargin)}>
+        <List>
+          <ListItem
+            button
+            onClick={() => window.open("http://max-randle-resume.s3-website-ap-southeast-2.amazonaws.com/")}
+          >
+            <ListItemIcon>
+              <Description fontSize="large" />
+            </ListItemIcon>
+            <ListItemText>Resume</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => window.open("https://github.com/MaxRandle")}>
+            <ListItemIcon>
+              <GitHub fontSize="large" />
+            </ListItemIcon>
+            <ListItemText>Github</ListItemText>
+          </ListItem>
+
+          <ListItem button onClick={() => window.open("https://www.linkedin.com/in/max-randle-a79760160/")}>
+            <ListItemIcon>
+              <LinkedIn fontSize="large" />
+            </ListItemIcon>
+            <ListItemText>Linkedin</ListItemText>
+          </ListItem>
+        </List>
+      </Container>
+
       <SectionHeader className={clsx(classes.flexColItem)}>Skills</SectionHeader>
 
       <SkillItem className={clsx(classes.flexColItem)} logo={javascriptLogo} alt={"JavaScript logo"}>
         I have used JavaScript for front-end, back-end, automation, AI, and as a glorified calculator. The languages has
-        many features that I love, such as the array methods map, filter, and reduce. ES6 has many super useful features
-        which I love and feel natural to use.
+        many features that I love, such as the array methods map, filter, and reduce. Aditionally ES6 has lots of super
+        useful and intuitive syntax which feels natural to use.
       </SkillItem>
 
       <SkillItem className={clsx(classes.flexColItem)} logo={reactLogo} alt={"React logo"}>
@@ -106,7 +140,7 @@ const IntroPage = () => {
         machine learning as a hobbyist.
       </SkillItem>
 
-      <SectionHeader className={clsx(classes.flexColItem)}>Resume</SectionHeader>
+      {/* <SectionHeader className={clsx(classes.flexColItem)}>Resume</SectionHeader>
 
       <Box className={clsx(classes.flexColItem, classes.center)}>
         <Fab
@@ -117,26 +151,7 @@ const IntroPage = () => {
           <Typography className={classes.extendedFab}>preview</Typography>
           <NavigateNext />
         </Fab>
-      </Box>
-
-      <SectionHeader className={clsx(classes.flexColItem)}>External</SectionHeader>
-
-      <Container className={clsx(classes.flexColItem)}>
-        <List>
-          <ListItem button onClick={() => window.open("https://github.com/MaxRandle")}>
-            <ListItemIcon>
-              <GitHub />
-            </ListItemIcon>
-            <ListItemText>Github</ListItemText>
-          </ListItem>
-          <ListItem button onClick={() => window.open("https://www.linkedin.com/in/max-randle-a79760160/")}>
-            <ListItemIcon>
-              <LinkedIn />
-            </ListItemIcon>
-            <ListItemText>Linkedin</ListItemText>
-          </ListItem>
-        </List>
-      </Container>
+      </Box> */}
     </Container>
   );
 };
