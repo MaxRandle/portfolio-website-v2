@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Divider, Grid, Typography } from "@material-ui/core";
+import { Box, Container, Divider, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import maxPortrate from "../media/max-portrate.jpg";
@@ -14,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
   flexColContainer: {
     display: "flex",
     flexDirection: "column",
-    padding: theme.spacing(2, 0, 0, 0),
+    padding: theme.spacing(3, 0, 0, 0),
   },
   flexColItem: {
-    margin: theme.spacing(0, 0, 2, 0),
+    margin: theme.spacing(0, 0, 3, 0),
   },
   portrate: {
     borderRadius: "50%",
@@ -52,28 +52,36 @@ const IntroPage = () => {
         Skills
       </Typography>
 
-      <SkillItem
-        className={clsx(classes.flexColItem)}
-        logo={javascriptLogo}
-        alt={"JavaScript logo"}
-        description="I have used JavaScript for front-end, back-end, automation, AI, and as a glorified calculator. The languages
-          has many features that I love, such as the array methods map, filter, and reduce. ES6 has many super useful
-          features which I love and feel natural to use."
-      />
+      <SkillItem className={clsx(classes.flexColItem)} logo={javascriptLogo} alt={"JavaScript logo"}>
+        I have used JavaScript for front-end, back-end, automation, AI, and as a glorified calculator. The languages has
+        many features that I love, such as the array methods map, filter, and reduce. ES6 has many super useful features
+        which I love and feel natural to use.
+      </SkillItem>
 
-      <SkillItem
-        className={clsx(classes.flexColItem)}
-        logo={reactLogo}
-        alt={"React logo"}
-        description="React is my go-to for any front end web task. I love creating clean, agnostic, and reusable components."
-      />
+      <SkillItem className={clsx(classes.flexColItem)} logo={reactLogo} alt={"React logo"}>
+        React is my go-to for any front end web task. I love creating clean, agnostic, and reusable components. I also
+        utilize the material-ui component library because life is too short to make your own custom styled components
+        for everything.
+      </SkillItem>
 
-      <SkillItem
-        className={clsx(classes.flexColItem)}
-        logo={nodeLogo}
-        alt={"Node logo"}
-        description="React is my go-to for any front end web task. I love creating clean, agnostic, and reusable components."
-      />
+      <SkillItem className={clsx(classes.flexColItem)} logo={nodeLogo} alt={"Node logo"}>
+        I have used NodeJS for many projects including such as building simple webservers and REST API's, and building
+        CRUD controllers over a database. I have also become familiar with ExpressJS and MongoDB which when used
+        together is a popular stack for building lightweight web applications.
+      </SkillItem>
+
+      <SkillItem className={clsx(classes.flexColItem)} logo={uipathLogo} alt={"UiPath logo"}>
+        UiPath is a software tool for robotic and intelligent automation. It is able to emulate a human performing
+        almost any computer based task. It has utilities that allow machine learning and optical text and image
+        recognition. The biggest limitations are tasks that require human judgement.
+      </SkillItem>
+
+      <SkillItem className={clsx(classes.flexColItem)} logo={pythonLogo} alt={"Python logo"}>
+        Python was taught primarily as the language of choice for the majority of my papers while studying computer
+        science. Most assignments and projects were set in Python because it's a well rounded language which can be used
+        for O.O. or functional programming. Now days I have found success using python for data science and machine
+        learning as a hobbyist.
+      </SkillItem>
     </Container>
   );
 };

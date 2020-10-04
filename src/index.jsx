@@ -19,7 +19,7 @@ const theme = createMuiTheme({
   },
   typography: {
     h1: {
-      lineHeight: "75px",
+      lineHeight: "68px",
     },
     h3: {
       lineHeight: "40px",

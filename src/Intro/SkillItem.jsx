@@ -6,20 +6,25 @@ import clsx from "clsx";
 const useStyles = makeStyles((theme) => ({
   flexRowContainer: {
     display: "flex",
-    justifyContent: "center",
+    // justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
   },
   logoBox: {
-    width: "96px",
-    height: "96px",
+    // width: "72px",
+    // height: "72px",
+    marginRight: theme.spacing(2),
   },
   logo: {
-    height: "60px",
+    // height: "60px",
+    width: "60px",
+    // maxHeight: "60px",
+    // maxWidth: "60px",
   },
 }));
 
 const SkillItem = (props) => {
-  const { logo, alt, description, className, ...rest } = props;
+  const { logo, alt, children, className, ...rest } = props;
   const classes = useStyles();
 
   return (
@@ -29,7 +34,7 @@ const SkillItem = (props) => {
           <img className={classes.logo} src={logo} alt={alt} />
         </Box>
       </Box>
-      <Typography>{description}</Typography>
+      <Typography>{children}</Typography>
     </Box>
   );
 };
