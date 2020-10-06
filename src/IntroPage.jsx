@@ -1,27 +1,15 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Divider,
-  Fab,
-  Link,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from "@material-ui/core";
+import { Box, Container, List, ListItem, ListItemIcon, ListItemText, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
-import maxPortrate from "../media/max-portrate.jpg";
-import javascriptLogo from "../media/logos/javascript-logo.svg";
-import reactLogo from "../media/logos/react-logo.svg";
-import nodeLogo from "../media/logos/node-logo.svg";
-import pythonLogo from "../media/logos/python-logo.svg";
-import uipathLogo from "../media/logos/uipath-logo.svg";
+import maxPortrate from "./media/max-portrate.jpg";
+import javascriptLogo from "./media/logos/javascript-logo.svg";
+import reactLogo from "./media/logos/react-logo.svg";
+import nodeLogo from "./media/logos/node-logo.svg";
+import pythonLogo from "./media/logos/python-logo.svg";
+import uipathLogo from "./media/logos/uipath-logo.svg";
 import SkillItem from "./SkillItem";
-import { Description, GitHub, LinkedIn, NavigateNext } from "@material-ui/icons";
+import { Description, GitHub, LinkedIn } from "@material-ui/icons";
 import SectionHeader from "./SectionHeader";
 
 const useStyles = makeStyles((theme) => ({
@@ -43,14 +31,6 @@ const useStyles = makeStyles((theme) => ({
   center: {
     textAlign: "center",
   },
-  sectionHeader: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  sectionHeaderDivider: {
-    flexGrow: "1",
-  },
   sectionHeaderText: {
     padding: theme.spacing(0, 2, 0, 2),
   },
@@ -63,7 +43,7 @@ const IntroPage = () => {
   const classes = useStyles();
 
   return (
-    <Container disableGutters maxWidth="sm" className={clsx(classes.flexColContainer)}>
+    <Container disableGutters maxWidth="md" className={clsx(classes.flexColContainer)}>
       <Typography className={clsx(classes.flexColItem, classes.center)} color="inherit" variant="h1">
         Max Randle
       </Typography>
@@ -86,21 +66,21 @@ const IntroPage = () => {
             onClick={() => window.open("http://max-randle-resume.s3-website-ap-southeast-2.amazonaws.com/")}
           >
             <ListItemIcon>
-              <Description fontSize="large" />
+              <Description style={{ fontSize: 45 }} />
             </ListItemIcon>
             <ListItemText>Resume</ListItemText>
           </ListItem>
 
           <ListItem button onClick={() => window.open("https://github.com/MaxRandle")}>
             <ListItemIcon>
-              <GitHub fontSize="large" />
+              <GitHub style={{ fontSize: 45 }} />
             </ListItemIcon>
             <ListItemText>Github</ListItemText>
           </ListItem>
 
           <ListItem button onClick={() => window.open("https://www.linkedin.com/in/max-randle-a79760160/")}>
             <ListItemIcon>
-              <LinkedIn fontSize="large" />
+              <LinkedIn style={{ fontSize: 45 }} />
             </ListItemIcon>
             <ListItemText>Linkedin</ListItemText>
           </ListItem>
@@ -140,18 +120,22 @@ const IntroPage = () => {
         machine learning as a hobbyist.
       </SkillItem>
 
-      {/* <SectionHeader className={clsx(classes.flexColItem)}>Resume</SectionHeader>
+      <SectionHeader className={clsx(classes.flexColItemSmallMargin)}>Projects</SectionHeader>
 
-      <Box className={clsx(classes.flexColItem, classes.center)}>
-        <Fab
-          variant="extended"
-          color="primary"
-          onClick={() => window.open("http://max-randle-resume.s3-website-ap-southeast-2.amazonaws.com/")}
-        >
-          <Typography className={classes.extendedFab}>preview</Typography>
-          <NavigateNext />
-        </Fab>
-      </Box> */}
+      <List className={clsx(classes.flexColItemSmallMargin)}>
+        <ListItem button>
+          <ListItemText variant="h5">P5.js</ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemText variant="h5">UTTT AI</ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemText variant="h5">UTTT AI</ListItemText>
+        </ListItem>
+        <ListItem button>
+          <ListItemText variant="h5">UTTT AI</ListItemText>
+        </ListItem>
+      </List>
     </Container>
   );
 };
