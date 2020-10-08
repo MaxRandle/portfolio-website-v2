@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Card, CardHeader, CardContent, Divider, Typography, Link, Box } from "@material-ui/core";
+import { Container, Card, CardHeader, CardContent, Divider, Typography, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   flexColItemSmallMargin: {
     margin: theme.spacing(0, 0, 1, 0),
   },
+  padSides: {
+    padding: theme.spacing(0, 2, 0, 2),
+  },
   center: {
     textAlign: "center",
   },
@@ -29,14 +32,22 @@ const P5JS = () => {
 
   return (
     <Container disableGutters maxWidth="md" className={clsx(classes.flexColContainer)}>
-      <Typography variant="h3" className={classes.flexColItem}>
+      <Typography variant="h3" className={clsx(classes.flexColItem, classes.padSides)}>
         P5.js
       </Typography>
 
-      <Typography className={classes.flexColItem}>
+      <Typography className={clsx(classes.flexColItem, classes.padSides)}>
         Some of my first ever JavaScript projects, built while I was still studying. These projects were built using the
         P5.js library and following tutorials by{" "}
-        <Link color="inherit" underline="always" href="https://www.youtube.com/user/shiffman">
+        <Link
+          color="inherit"
+          underline="always"
+          href="#"
+          onClick={(event) => {
+            event.preventDefault();
+            window.open("https://www.youtube.com/user/shiffman");
+          }}
+        >
           Coding Train - Daniel Shiffman
         </Link>
       </Typography>
@@ -44,7 +55,7 @@ const P5JS = () => {
       <Card className={classes.flexColItem}>
         <CardHeader title="Rain" />
         <CardContent className={classes.center}>
-          <iframe className={classes.iframe} src="https://editor.p5js.org/MaxRandle/embed/_xTtmD_Wx" />
+          <iframe className={classes.iframe} title="Rain" src="https://editor.p5js.org/MaxRandle/embed/_xTtmD_Wx" />
         </CardContent>
         <Divider />
         <CardContent>
@@ -60,7 +71,7 @@ const P5JS = () => {
       <Card className={classes.flexColItem}>
         <CardHeader title="Maze" />
         <CardContent className={classes.center}>
-          <iframe className={classes.iframe} src="https://editor.p5js.org/MaxRandle/embed/oRiUyH7mG" />
+          <iframe className={classes.iframe} title="Maze" src="https://editor.p5js.org/MaxRandle/embed/oRiUyH7mG" />
         </CardContent>
         <Divider />
         <CardContent>
@@ -75,7 +86,7 @@ const P5JS = () => {
       <Card className={classes.flexColItem}>
         <CardHeader title="Fawkes" />
         <CardContent className={classes.center}>
-          <iframe className={classes.iframe} src="https://editor.p5js.org/MaxRandle/embed/c2_q18g76" />
+          <iframe className={classes.iframe} title="Fawkes" src="https://editor.p5js.org/MaxRandle/embed/c2_q18g76" />
         </CardContent>
         <Divider />
         <CardContent>
@@ -89,9 +100,9 @@ const P5JS = () => {
       </Card>
 
       <Card className={classes.flexColItem}>
-        <CardHeader title="Starfield" />
+        <CardHeader title="Warp" />
         <CardContent className={classes.center}>
-          <iframe className={classes.iframe} src="https://editor.p5js.org/MaxRandle/embed/Qejijupwg" />
+          <iframe className={classes.iframe} title="Warp" src="https://editor.p5js.org/MaxRandle/embed/Qejijupwg" />
         </CardContent>
         <Divider />
         <CardContent>
