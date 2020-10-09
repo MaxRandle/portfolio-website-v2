@@ -43,7 +43,7 @@ const P5JS = () => {
       <Typography className={clsx(classes.flexColItem, classes.padSides)}>
         On the 30<sup>th</sup> of May 2020 SpaceX launched mission Crew Dragon Demo-2, the first ever commercial manned
         space launch mission to the International Space Station. This mission involved the Dragon-2 capsule being
-        launched from Cape Canaveral Air Force Station and then carried into low-Earth-orbit aboard the Spacex Falcon-9
+        launched from Cape Canaveral Air Force Station and then carried into low-Earth-orbit aboard the SpaceX Falcon-9
         rocket. Once the Dragon-2 crew capsule separated from the Falcon-9 upper stage the pilots used the reaction
         control thruster system to manouver within 20 metres of the I.S.S at which point Dragon-2 takes over and docks
         autonomously. To pique public interest in the mission, SpaceX published a free{" "}
@@ -77,7 +77,7 @@ const P5JS = () => {
         Eventually I had reverse engineered the code and came up with a simple algorithm that could safely and
         accurately dock using only the reaction control thrusters and not cheating by editing any code or variables
         directly. The algorithm attempted to match Dragon's velocity in all degrees of motion to an amount proportional
-        to the inverse of the displacement for each axis of motion.
+        to the displacement for each axis of motion.
       </Typography>
 
       <Typography className={clsx(classes.flexColItem, classes.padSides)}>
@@ -113,17 +113,3 @@ const P5JS = () => {
 };
 
 export default P5JS;
-
-/*
-<Link
-          color="inherit"
-          underline="always"
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            window.open("https://iss-sim.spacex.com/");
-          }}
-        >
-          https://iss-sim.spacex.com/
-        </Link>
-*/

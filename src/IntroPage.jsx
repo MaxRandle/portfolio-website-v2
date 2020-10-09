@@ -54,8 +54,8 @@ const IntroPage = () => {
       </Typography>
 
       <Typography className={clsx(classes.flexColItem, classes.padSides, classes.center)}>
-        Hi, I'm max, welcome to my portfolio! Here you can find out a little bit about me and play around with some of
-        my embedded projects. This website is built using react and hosted on AWS.
+        Hi I'm Max, welcome to my portfolio! Here you can find out a little bit about me, download my current CV, and
+        play around with some of my embedded projects. This website is built using React.js and hosted on AWS.
       </Typography>
 
       <Box className={clsx(classes.flexColItem, classes.center)}>
@@ -134,7 +134,7 @@ const IntroPage = () => {
           <ListItemText>
             React is my go-to for any front end web task. I love creating clean, agnostic, and reusable components. I
             have worked on projects that demonstrate a high degree of functionality and complex state management. I also
-            utilize the material-ui component library because life is too short to make your own custom styled
+            utilise the material-ui component library because life is too short to make your own custom styled
             components for everything.
           </ListItemText>
         </ListItem>

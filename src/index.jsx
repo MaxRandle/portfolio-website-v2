@@ -17,6 +17,7 @@ const theme = createMuiTheme({
       main: amber[800],
     },
   },
+
   typography: {
     h1: {
       lineHeight: "68px",
@@ -24,6 +25,18 @@ const theme = createMuiTheme({
     h3: {
       lineHeight: "40px",
     },
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
   },
 });
 

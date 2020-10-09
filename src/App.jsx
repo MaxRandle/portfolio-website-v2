@@ -4,14 +4,50 @@ import IntroPage from "./IntroPage";
 import P5JS from "./P5JS";
 import UTTT from "./UTTT";
 import IssDockingAutopilot from "./IssDockingAutopilot";
+import BackArrow from "./BackArrow";
 
 function App() {
   return (
     <Router>
-      <Route path="/" exact component={() => <IntroPage />} />
-      <Route path="/p5js" component={() => <P5JS />} />
-      <Route path="/uttt" component={() => <UTTT />} />
-      <Route path="/iss" component={() => <IssDockingAutopilot />} />
+      <Route
+        path="/"
+        exact
+        component={() => (
+          <>
+            <IntroPage />
+          </>
+        )}
+      />
+
+      <Route
+        path="/p5js"
+        component={() => (
+          <>
+            <BackArrow />
+            <P5JS />
+          </>
+        )}
+      />
+
+      <Route
+        path="/uttt"
+        component={() => (
+          <>
+            <BackArrow />
+            <UTTT />
+          </>
+        )}
+      />
+
+      <Route
+        path="/iss"
+        component={() => (
+          <>
+            <BackArrow />
+            <IssDockingAutopilot />
+          </>
+        )}
+      />
 
       <Route path="/" component={() => <Redirect to="/" />} exact />
     </Router>
