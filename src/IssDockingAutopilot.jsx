@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, CardHeader, CardContent, Divider, Typography, Link } from "@material-ui/core";
+import { Container, Typography, Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import simScreenshot from "./media/simScreenshot.jpg";
