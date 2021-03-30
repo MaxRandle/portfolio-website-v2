@@ -39,15 +39,7 @@ const P5JS = () => {
       <Typography className={clsx(classes.flexColItem, classes.padSides)}>
         Some of my first ever JavaScript projects, built while I was still studying. These projects were built using the
         P5.js library and following tutorials by{" "}
-        <Link
-          color="inherit"
-          underline="always"
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            window.open("https://www.youtube.com/user/shiffman");
-          }}
-        >
+        <Link target="_blank" color="inherit" underline="always" href="https://www.youtube.com/user/shiffman">
           Coding Train - Daniel Shiffman
         </Link>
       </Typography>

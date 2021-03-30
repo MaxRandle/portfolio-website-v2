@@ -47,15 +47,7 @@ const P5JS = () => {
         rocket. Once the Dragon-2 crew capsule separated from the Falcon-9 upper stage the pilots used the reaction
         control thruster system to manouver within 20 metres of the I.S.S at which point Dragon-2 takes over and docks
         autonomously. To pique public interest in the mission, SpaceX published a free{" "}
-        <Link
-          color="inherit"
-          underline="always"
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            window.open("https://iss-sim.spacex.com/");
-          }}
-        >
+        <Link target="_blank" color="inherit" underline="always" href="https://iss-sim.spacex.com/">
           online docking simulator
         </Link>{" "}
         for practicing manouvering and docking the Dragon-2 crew capsule using the reaction control thruster system. The
@@ -96,13 +88,10 @@ const P5JS = () => {
       <Typography className={clsx(classes.flexColItem, classes.padSides)}>
         You can play around with my autopilot too! Simply go to{" "}
         <Link
+          target="_blank"
           color="inherit"
           underline="always"
-          href="#"
-          onClick={(event) => {
-            event.preventDefault();
-            window.open("https://github.com/MaxRandle/spacex_iss_docking_simulator_script");
-          }}
+          href="https://github.com/MaxRandle/spacex_iss_docking_simulator_script"
         >
           this github repository
         </Link>{" "}
