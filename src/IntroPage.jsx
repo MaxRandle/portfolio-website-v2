@@ -178,6 +178,15 @@ const IntroPage = () => {
             }
           />
         </ListItem>
+
+        <ListItem button onClick={() => history.push("/smolurl")}>
+          <ListItemText
+            primary={<Typography variant="h5">smol url</Typography>}
+            secondary={
+              <Typography>URL shortener built with MERN stack.</Typography>
+            }
+          />
+        </ListItem>
       </List>
 
       <SectionHeader className={clsx(classes.flexColItemSmallMargin)}>

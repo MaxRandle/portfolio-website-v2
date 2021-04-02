@@ -5,6 +5,7 @@ import P5JS from "./P5JS";
 import UTTT from "./UTTT";
 import IssDockingAutopilot from "./IssDockingAutopilot";
 import BackArrow from "./BackArrow";
+import SmolUrl from "./SmolUrl";
 
 function App() {
   return (
@@ -45,6 +46,16 @@ function App() {
           <>
             <BackArrow />
             <IssDockingAutopilot />
+          </>
+        )}
+      />
+
+      <Route
+        path="/smolurl"
+        component={() => (
+          <>
+            <BackArrow />
+            <SmolUrl />
           </>
         )}
       />
