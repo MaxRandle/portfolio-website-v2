@@ -78,14 +78,19 @@ const Hobbies = (props) => {
     if (containerWidth === 0) {
       setContainerWidth(_ref.current.offsetWidth);
     }
-  }, []);
+  }, [containerWidth]);
 
   return (
     <Grid container spacing={1} className={className} {...rest}>
       {hobbies.map((hobby) => {
         return (
           <Grid item key={hobby.title} sm={hobby.sm} xs={hobby.xs}>
-            <HobbyTile img={hobby.src} title={hobby.title} alt={hobby.alt} size={hobby.sm} />
+            <HobbyTile
+              img={hobby.src}
+              title={hobby.title}
+              alt={hobby.alt}
+              size={hobby.sm}
+            />
           </Grid>
         );
       })}

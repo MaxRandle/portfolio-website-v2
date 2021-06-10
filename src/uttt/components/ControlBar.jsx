@@ -1,8 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LinearProgress, Paper, Card, CardHeader } from "@material-ui/core";
+import { Card, CardHeader } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { GameStateContext } from "../contexts/GameStateContext";
-import { SizeContext } from "../contexts/SizeContext";
 import { getBoardEval } from "../AI.js";
 import clsx from "clsx";
 
@@ -15,8 +14,7 @@ const useStyles = makeStyles((theme) => ({
 const ControlBar = (props) => {
   const { className, ...otherProps } = props;
   const { gameState } = useContext(GameStateContext);
-  const { squareSize } = useContext(SizeContext);
-  const [loading, setLoading] = useState(true);
+  const [setLoading] = useState(true);
   const [evaluation, setEvaluation] = useState(0);
   const classes = useStyles();
 
@@ -44,7 +42,7 @@ const ControlBar = (props) => {
       };
       evaluateBoardAsync();
     }
-  }, [gameState]);
+  }, [gameState, setLoading]);
 
   return (
     <Card className={clsx(className, classes.flex)} {...otherProps}>

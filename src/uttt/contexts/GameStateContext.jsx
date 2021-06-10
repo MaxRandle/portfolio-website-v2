@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 import { getBestMove } from "../AI";
 import { useEffect } from "react";
 
@@ -16,26 +16,29 @@ const GameStateContextProvider = (props) => {
     victory: false,
   });
 
-  const playMove = (move) => {
-    const { square, tile } = move;
-    //create a new arrect which we can mutate
-    let newGame = JSON.parse(JSON.stringify(gameState));
-    //update new board state with move
-    newGame.board[square][tile] = newGame.turn;
-    newGame.lastMove = { square, tile };
-    newGame.turn = newGame.turn * -1;
-    //check local victories
-    newGame.localVictories[square] = checkVictory(newGame.board[square]);
-    //check global victory
-    newGame.victory = checkVictory(newGame.localVictories);
-    setGameState(newGame);
-  };
+  const playMove = useCallback(
+    (move) => {
+      const { square, tile } = move;
+      //create a new arrect which we can mutate
+      let newGame = JSON.parse(JSON.stringify(gameState));
+      //update new board state with move
+      newGame.board[square][tile] = newGame.turn;
+      newGame.lastMove = { square, tile };
+      newGame.turn = newGame.turn * -1;
+      //check local victories
+      newGame.localVictories[square] = checkVictory(newGame.board[square]);
+      //check global victory
+      newGame.victory = checkVictory(newGame.localVictories);
+      setGameState(newGame);
+    },
+    [gameState]
+  );
 
   useEffect(() => {
     if (gameState.victory === false && gameState.turn === 1) {
       setTimeout(() => playMove(getBestMove(gameState)), 0); // ai plays a move
     }
-  }, [gameState]);
+  }, [gameState, playMove]);
 
   return (
     <GameStateContext.Provider value={{ gameState, playMove, setGameState }}>
