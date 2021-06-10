@@ -22,7 +22,6 @@ import dockerLogo from "./media/logos/docker-logo.svg";
 import { Description, GitHub, LinkedIn } from "@material-ui/icons";
 import SectionHeader from "./SectionHeader";
 import { useHistory } from "react-router-dom";
-import ListItemLogo from "./ListItemLogo";
 import Hobbies from "./Hobbies";
 import SkillListItem from "./SkillListItem";
 
