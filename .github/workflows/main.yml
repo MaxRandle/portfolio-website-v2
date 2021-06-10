@@ -13,8 +13,8 @@ jobs:
     strategy:
       matrix:
         # node-version: [8.x, 10.x, 12.x]
-        node-version: [12.x]
-        # node-version: [15.x]
+        # node-version: [12.x]
+        node-version: [15.x]
 
     steps:
       - name: checkout
@@ -23,12 +23,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install
+      - name: install packages
         run: |
-          npm install
-      - name: Production Build
+          yarn install
+      - name: production build
         run: |
-          npm run build
+          yarn build
       - name: push to s3
         uses: jakejarvis/s3-sync-action@master
         with:
