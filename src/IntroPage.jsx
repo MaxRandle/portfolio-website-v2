@@ -15,13 +15,16 @@ import javascriptLogo from "./media/logos/javascript-logo.svg";
 import reactLogo from "./media/logos/react-logo.svg";
 import nodeLogo from "./media/logos/node-logo.svg";
 import mongoLogo from "./media/logos/mongodb-logo.svg";
-import pythonLogo from "./media/logos/python-logo.svg";
 import uipathLogo from "./media/logos/uipath-logo.svg";
+import pythonLogo from "./media/logos/python-logo.svg";
+import awsLogo from "./media/logos/aws-block-logo.svg";
+import dockerLogo from "./media/logos/docker-logo.svg";
 import { Description, GitHub, LinkedIn } from "@material-ui/icons";
 import SectionHeader from "./SectionHeader";
 import { useHistory } from "react-router-dom";
 import ListItemLogo from "./ListItemLogo";
 import Hobbies from "./Hobbies";
+import SkillListItem from "./SkillListItem";
 
 const useStyles = makeStyles((theme) => ({
   flexColContainer: {
@@ -58,6 +61,57 @@ const useStyles = makeStyles((theme) => ({
     border: "solid",
   },
 }));
+
+const skillData = [
+  {
+    logo: javascriptLogo,
+    logoAltText: "JavaScript Logo",
+    title: "JavaScript",
+    body: "I have used JavaScript for front-end, back-end, automation, AI, and as a glorified calculator. The languages has many features that I love, such as the array methods map, filter, and reduce. Aditionally ES6 has lots of super useful and intuitive syntax which feels natural to use.",
+  },
+  {
+    logo: reactLogo,
+    logoAltText: "React Logo",
+    title: "React.js",
+    body: "React is my go-to for any front end web task. I love creating clean, agnostic, and reusable components. I have worked on projects that demonstrate a high degree of functionality and complex state management. I also utilise the material-ui component library because life is too short to make your own custom styled components for everything.",
+  },
+  {
+    logo: nodeLogo,
+    logoAltText: "Node Logo",
+    title: "Node.js",
+    body: "I have used NodeJS for many projects including such as building simple webservers and REST API's, and building CRUD controllers over a database. I have also become familiar with ExpressJS and MongoDB which when used together is a popular stack for building lightweight web applications.",
+  },
+  {
+    logo: mongoLogo,
+    logoAltText: "MongoDB Logo",
+    title: "MongoDB",
+    body: "MongoDB is an awesome lightweight database that is perfect small fullstack web apps. It also comes with free hosting in the form of MongoDB Atlas. I learned the basics of data modelling for non-relational databases while using MongoDB coupled with an ORM called Mongoose.",
+  },
+  {
+    logo: awsLogo,
+    logoAltText: "AWS Logo",
+    title: "Amazon Web Services",
+    body: "aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws aws",
+  },
+  {
+    logo: dockerLogo,
+    logoAltText: "Docker Logo",
+    title: "Docker",
+    body: "docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker docker ",
+  },
+  {
+    logo: uipathLogo,
+    logoAltText: "UiPath Logo",
+    title: "UiPath",
+    body: "UiPath is a software tool for robotic and intelligent automation. It is able to emulate a human performing almost any computer based task. It has utilities that allow machine learning and optical text and image recognition. The biggest limitations are tasks that require human judgement.",
+  },
+  {
+    logo: pythonLogo,
+    logoAltText: "Python Logo",
+    title: "Python",
+    body: "Python was taught primarily as the language of choice for the majority of my papers while studying computer science. Most assignments and projects were set in Python because it's a well rounded language which can be used for Object-Oriented or functional programming. Now days I have found success using python for data science and machine learning as a hobbyist.",
+  },
+];
 
 const IntroPage = () => {
   const classes = useStyles();
@@ -192,104 +246,11 @@ const IntroPage = () => {
       <SectionHeader className={clsx(classes.flexColItemSmallMargin)}>
         Skills
       </SectionHeader>
+
       <List>
-        <ListItem>
-          <ListItemLogo logo={javascriptLogo} alt="JavaScript Logo" />
-          <ListItemText
-            primary={<Typography variant="h5">JavaScript</Typography>}
-            secondary={
-              <Typography>
-                I have used JavaScript for front-end, back-end, automation, AI,
-                and as a glorified calculator. The languages has many features
-                that I love, such as the array methods map, filter, and reduce.
-                Aditionally ES6 has lots of super useful and intuitive syntax
-                which feels natural to use.
-              </Typography>
-            }
-          />
-        </ListItem>
-
-        <ListItem>
-          <ListItemLogo logo={reactLogo} alt="React Logo" />
-          <ListItemText
-            primary={<Typography variant="h5">React.js</Typography>}
-            secondary={
-              <Typography>
-                React is my go-to for any front end web task. I love creating
-                clean, agnostic, and reusable components. I have worked on
-                projects that demonstrate a high degree of functionality and
-                complex state management. I also utilise the material-ui
-                component library because life is too short to make your own
-                custom styled components for everything.
-              </Typography>
-            }
-          />
-        </ListItem>
-
-        <ListItem>
-          <ListItemLogo logo={nodeLogo} alt="Node logo" />
-          <ListItemText
-            primary={<Typography variant="h5">Node.js</Typography>}
-            secondary={
-              <Typography>
-                I have used NodeJS for many projects including such as building
-                simple webservers and REST API's, and building CRUD controllers
-                over a database. I have also become familiar with ExpressJS and
-                MongoDB which when used together is a popular stack for building
-                lightweight web applications.
-              </Typography>
-            }
-          />
-        </ListItem>
-
-        <ListItem>
-          <ListItemLogo logo={mongoLogo} alt="MongoDB logo" />
-          <ListItemText
-            primary={<Typography variant="h5">MongoDB</Typography>}
-            secondary={
-              <Typography>
-                MongoDB is an awesome lightweight database that is perfect small
-                fullstack web apps. It also comes with free hosting in the form
-                of MongoDB Atlas. I learned the basics of data modelling for
-                non-relational databases while using MongoDB coupled with an ORM
-                called Mongoose.
-              </Typography>
-            }
-          />
-        </ListItem>
-
-        <ListItem>
-          <ListItemLogo logo={uipathLogo} alt="UiPath logo" />
-          <ListItemText
-            primary={<Typography variant="h5">UiPath</Typography>}
-            secondary={
-              <Typography>
-                UiPath is a software tool for robotic and intelligent
-                automation. It is able to emulate a human performing almost any
-                computer based task. It has utilities that allow machine
-                learning and optical text and image recognition. The biggest
-                limitations are tasks that require human judgement.
-              </Typography>
-            }
-          />
-        </ListItem>
-
-        <ListItem>
-          <ListItemLogo logo={pythonLogo} alt="Python logo" />
-          <ListItemText
-            primary={<Typography variant="h5">Python</Typography>}
-            secondary={
-              <Typography>
-                Python was taught primarily as the language of choice for the
-                majority of my papers while studying computer science. Most
-                assignments and projects were set in Python because it's a well
-                rounded language which can be used for Object-Oriented or
-                functional programming. Now days I have found success using
-                python for data science and machine learning as a hobbyist.
-              </Typography>
-            }
-          />
-        </ListItem>
+        {skillData.map((skill) => (
+          <SkillListItem {...skill} />
+        ))}
       </List>
 
       <SectionHeader className={clsx(classes.flexColItem)}>Work</SectionHeader>
